@@ -2,10 +2,6 @@
 # http://rptl.io/configtxt
 # Some settings may impact device functionality. See link above for details
 
-# Enable I2C-1 and set Baud rate to 400 kHz, SDA GPIO 2, SCLK GPIO 3
-dtparam=i2c_arm=on
-dtparam=i2c_arm_baudrate=400000
-
 # Enable audio (loads snd_bcm2835)
 dtparam=audio=on
 
@@ -34,6 +30,10 @@ disable_overscan=1
 
 # Run as fast as firmware / board allows
 arm_boost=1
+
+# Enable SPI-0 with 2 chip selects
+# MISO GPIO 9, MOSI GPIO 10, SCLK GPIO 11, CS0 GPIO 7, CS1 GPIO 8
+dtoverlay=spi0-2cs
 
 # Set GPIO 25 and GPIO 24 as button inputs (interrupt pins)
 # Order matters!
